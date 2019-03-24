@@ -1,81 +1,81 @@
-body{
-    background-color: #79d279;
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
-}
+// body{
+//     background-color: #79d279;
+//     text-align: center;
+//     width: 60%;
+//     margin: 0 auto;
+// }
 
-.card {
-    margin: 2em 2em 2em 2em;
-    background-color: aliceblue;
-    // height: 10em;
-    padding-top: 2em;
-}
+// .card {
+//     margin: 2em 2em 2em 2em;
+//     background-color: aliceblue;
+//     // height: 10em;
+//     padding-top: 2em;
+// }
 
-.card-title{
-    text-align: left;
-    padding-left: 2rem;
-}
+// .card-title{
+//     text-align: left;
+//     padding-left: 2rem;
+// }
 
-.checklists{
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    padding: 2em 5em 2em 5em;
-}
-.checklists div{
-    flex: 1;
-    margin-bottom: 1rem;
-}
+// .checklists{
+//     text-align: left;
+//     display: flex;
+//     flex-direction: column;
+//     padding: 2em 5em 2em 5em;
+// }
+// .checklists div{
+//     flex: 1;
+//     margin-bottom: 1rem;
+// }
 
-.checklists div div{
-    position: relative;
-}
+// .checklists div div{
+//     position: relative;
+// }
 
-.checklists div div button{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
+// .checklists div div button{
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+// }
 
-.checklists div div input{
-    position: absolute;
-    top: 2em;
-    right: 0;
-}
+// .checklists div div input{
+//     position: absolute;
+//     top: 2em;
+//     right: 0;
+// }
 
-.new-checklist{
-    display: flex;
-    flex-wrap: wrap;
-}
-.checklist-name{
-    flex: 2;
-    padding: 0em 2em 0em 2em;
-    min-width: 15rem;
+// .new-checklist{
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+// .checklist-name{
+//     flex: 2;
+//     padding: 0em 2em 0em 2em;
+//     min-width: 15rem;
     
-}
+// }
 
-.checklist-name input{
-    border: none;
-    border-bottom: 1px solid #999;
-    width: 100%;
-    font-size: 2em;
-}
+// .checklist-name input{
+//     border: none;
+//     border-bottom: 1px solid #999;
+//     width: 100%;
+//     font-size: 2em;
+// }
 
 
-.button{
-    flex: 1;
-}
+// .button{
+//     flex: 1;
+// }
 
-.button div{
-    border: 2px solid #000;
-    cursor: pointer;
-    display: inline-block;
-    max-width: 12rem;
-    padding: 10px 5px 10px 5px;
-}
+// .button div{
+//     border: 2px solid #000;
+//     cursor: pointer;
+//     display: inline-block;
+//     max-width: 12rem;
+//     padding: 10px 5px 10px 5px;
+// }
 
-.button div:active {
-    color: #fff;
-    background-color: #000;
-}
+// .button div:active {
+//     color: #fff;
+//     background-color: #000;
+// }
