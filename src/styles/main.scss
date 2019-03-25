@@ -20,6 +20,7 @@ button{
     // height: 10em;
     padding-top: 2em;
     // font-weight: bold;
+    border-radius:0.8%
 }
 
 .card-title{
@@ -124,14 +125,14 @@ h4.checklist-name, .checkitem-name{
     left: 0;
 }
 
-// .add-item-div{
-//     display: none !important;
-// }
+.new-item, .add-item{
+    display: none;
+}
 
 .delete{
     border: none;
     color: white;
-    background-color: #cc3300;
+    background-color: #ff5c33;
     font-weight: bold;
 }
 .delete-item{
@@ -150,4 +151,11 @@ h4.checklist-name, .checkitem-name{
     color: white;
     font-weight: bold;
     height: 1.5em;
+}
+
+.add-item-button {
+    height: 1.5rem;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
 }

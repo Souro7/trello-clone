@@ -117,6 +117,15 @@ async function init() {
             displayChecklists(card.name)
 
         }
+
+        //for add item to checklist button
+        if ($(e.target).attr("class") === "add-item-button") {
+            let index = $(e.target).attr("data-id")
+            $(`#add-item-${index}`).hide()
+            $(`#new-item-${index}`).show()
+            $(`#add-${index}`).show()
+        }
+
     })
 }
 
@@ -130,7 +139,8 @@ async function displayChecklists(cardName) {
         $(".checklists").append(`<div class='checklist-${i + 1}' style="min-height: 10rem;">
                                     <div class="delete-checklist"><h4 class="checklist-name" id="checklist-name-${i + 1}" data-id="${checkList.id}" data-index="${i + 1}"> ${checkList.name}</h4><input type="text" class="edit-checklist" id="edit-${i + 1}" value="${checkList.name}">
                                     <button type="button" data-id="${checkList.id}" data-index="${i + 1}" class="edit" id="edit-checklist-${i + 1}">Save</button>
-                                    <button type="button" data-id="${checkList.id}" class="delete" id="delete-checklist-${i + 1}">X</button>
+                                    <button type="button" data-id="${checkList.id}" class="delete" id="delete-checklist-${i + 1}">Delete</button>
+                                    <button type="button" class="add-item-button" id="add-item-${i + 1}" data-id="${i + 1}">Add an item</button>
                                     </div>
                                     <div class="add-item-div"><input type="text" class="new-item" id="new-item-${i + 1}"><button type="button" data-id="${checkList.id}" class="add-item" id="add-${i + 1}">Add item</button></div>                                
                                     </div>`)
