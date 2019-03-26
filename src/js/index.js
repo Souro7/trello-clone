@@ -57,8 +57,8 @@ async function init() {
             .charAt($(e.target).attr("id").length - 1)
       ).val();
       let checkitem = await addItemToCheckList(checkList, value);
-      //   let items = $(e.target).attr("data-items") + 1;
-      //   $(e.target).attr("data-items", items);
+      let items = parseInt($(e.target).attr("data-items")) + 1;
+      $(e.target).attr("data-items", `${items}`);
       displayNewCheckItem($(e.target).attr("data-id"), $(e.target).attr("data-checklist"), $(e.target).attr("data-items"), checkitem);
     }
 
@@ -206,7 +206,7 @@ async function displayNewChecklist() {
 
 async function displayNewCheckItem(checkListId, checklistNumber, checkitemNumber, checklistObj) {
   $(`.checklist-${checklistNumber}`).append(`
-    <div class="checklist-items" id="checkitem-${checklistNumber - 1}-${checkitemNumber - 1}"><input id="item-${checklistNumber - 1}-${checkitemNumber - 1}" type='checkbox' class="checkbox" data-id="${checklistObj.id}" value='${
+    <div class="checklist-items" id="check-item-${checklistNumber - 1}-${checkitemNumber - 1}"><input id="item-${checklistNumber - 1}-${checkitemNumber - 1}" type='checkbox' class="checkbox" data-id="${checklistObj.id}" value='${
     checklistObj.state
   }'><span style="padding-right:2em;" class="checkitem-name" id="checkitem-${checklistNumber - 1}-${checkitemNumber - 1}" data-id="${checklistObj.id}" data-checklist="${checklistNumber - 1}" data-checkitem="${checkitemNumber - 1}">${checklistObj.name}</span>
     <input type="text" class="checkitem-input" id="checkitem-input-${checklistNumber - 1}-${checkitemNumber - 1}" value="${checklistObj.name}">
