@@ -31,8 +31,6 @@ async function init() {
 
     //to delete checklist
     if ($(e.target).attr("class") === "delete") {
-      await deleteCheckList($(e.target).attr("data-id"));
-
       //remove the checkList from checkListIds[] and then
       for (let i = 0; i < checkListIds.length; i++) {
         if (checkListIds[i] === $(e.target).attr("data-id")) {
@@ -41,6 +39,7 @@ async function init() {
       }
       let checklist = $(e.target).attr("data-checklist");
       $(`.${checklist}`).remove();
+      await deleteCheckList($(e.target).attr("data-id"));
     }
 
     //to add an item to the checklist
@@ -65,9 +64,9 @@ async function init() {
     //to delete checklist item
     if ($(e.target).attr("class") === "delete-item") {
       console.log("deleted");
-      await deletecheckListItem($(e.target).attr("data-checklist-id"), $(e.target).attr("data-id"));
       let checkitem = $(e.target).attr("data-checkitem");
       $(`#${checkitem}`).remove();
+      await deletecheckListItem($(e.target).attr("data-checklist-id"), $(e.target).attr("data-id"));
     }
 
     //to change checkbox checked value
@@ -156,31 +155,6 @@ async function displayChecklists(cardName) {
       }
     });
   });
-  //   for (let i = 0; i < checkListIds.length; i++) {
-  //     let checkList = await getCheckList(checkListIds[i]);
-
-  //     $(".checklists").append(`<div class='checklist-${i + 1}' style="min-height: 10rem;">
-  //                                     <div class="delete-checklist"><h4 class="checklist-name" id="checklist-name-${i + 1}" data-id="${checkList.id}" data-index="${i + 1}"> ${checkList.name}</h4><input type="text" class="edit-checklist" id="edit-${i + 1}" value="${checkList.name}">
-  //                                     <button type="button" data-id="${checkList.id}" data-index="${i + 1}" class="edit" id="edit-checklist-${i + 1}">Save</button>
-  //                                     <button type="button" data-id="${checkList.id}" class="delete" id="delete-checklist-${i + 1}" data-checklist="checklist-${i + 1}">Delete</button>
-  //                                     <button type="button" class="add-item-button" id="add-item-${i + 1}" data-id="${i + 1}" data-items="${checkList.checkItems.length}">Add an item</button>
-  //                                     </div>
-  //                                     <div class="add-item-div"><input type="text" class="new-item" id="new-item-${i + 1}">
-  //                                     <button type="button" data-id="${checkList.id}" class="add-item" id="add-${i + 1}" data-checklist="${i + 1}" data-items="${checkList.checkItems.length}">Add item</button></div>
-  //                                     </div>`);
-
-  //     for (let j = 0; j < checkList.checkItems.length; j++) {
-  //       $(`.checklist-${i + 1}`).append(`<div class="checklist-items" id="check-item-${i}-${j}">
-  //       <input id="item-${i}-${j}" type='checkbox' class="checkbox" data-id="${checkList.checkItems[j].id}" value='${checkList.checkItems[j].state}'>
-  //         <span style="padding-right:2em;" class="checkitem-name" id="checkitem-${i}-${j}" data-id="${checkList.checkItems[j].id}" data-checklist="${i}" data-checkitem="${j}">${checkList.checkItems[j].name}</span>
-  //             <input type="text" class="checkitem-input" id="checkitem-input-${i}-${j}" value="${checkList.checkItems[j].name}">
-  //             <button class="edit-item" id="edit-item-${i}-${j}" data-id="${checkList.checkItems[j].id}" data-checklist="${i}" data-checkitem="${j}" style="padding: 0px 1px;">Save</button>
-  //             <button class="delete-item" style="padding: 0px 1px;" data-id="${checkList.checkItems[j].id}" data-checklist-id="${checkList.id}" data-checkitem="check-item-${i}-${j}">x</button><br></div>`);
-  //       if ($(`#item-${i}-${j}`).val() === "complete") {
-  //         $(`#item-${i}-${j}`).prop("checked", true);
-  //       }
-  //     }
-  //   }
 }
 
 //display new checklist
